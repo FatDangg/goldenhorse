@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)https://www.goldenhorse.org.tw/awards/nw/ -->
+<html lang="zh_TW" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="emotion-insertion-point" content="">
+
+<meta http-equiv="Cache-control" content="max-age=600, must-revalidate">
+<meta name="keywords" content="金馬獎,金馬影展,影展,創投,電影">
+<meta property="og:type" content="movie">
+<meta property="og:url" content=" https://www.goldenhorse.org.tw/awards/nw/">
+<link href="./台北金馬影展 Taipei Golden Horse Film Festival_files/reset.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./台北金馬影展 Taipei Golden Horse Film Festival_files/style.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./台北金馬影展 Taipei Golden Horse Film Festival_files/style-theme.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./台北金馬影展 Taipei Golden Horse Film Festival_files/jquery.fancybox.css" media="screen" rel="stylesheet" type="text/css">
+<link href="./台北金馬影展 Taipei Golden Horse Film Festival_files/style-cover-menu.css" media="screen" rel="stylesheet" type="text/css">
+<script src="./台北金馬影展 Taipei Golden Horse Film Festival_files/system.js"></script>
+<script src="./台北金馬影展 Taipei Golden Horse Film Festival_files/jquery-1.12.4.min.js"></script>
+<script src="./台北金馬影展 Taipei Golden Horse Film Festival_files/jquery.fancybox.pack.js"></script>
+<script src="./台北金馬影展 Taipei Golden Horse Film Festival_files/jquery.placeholder.js"></script>
+<script src="./台北金馬影展 Taipei Golden Horse Film Festival_files/jquery.tendina.min.js"></script>
+<script language="JavaScript" type="text/javascript">
+
+function fancyAlert(msg,callbackYes){
+	var argLength = arguments.length;
+	if(argLength == 2){
+		jQuery.fancybox({
+			'modal' : true,
+			'helpers' : {
+				'overlay' : {
+					'locked' : false
+				}
+			},
+			'live' : false,
+			'content' : '<div style="margin:1px; width:500px;">'+msg+'<div style="text-align:right;margin-top:10px;"><input type="button" id="fancyConfirm_ok" class="btn btn-default" value="確定"></div></div>',
+			'beforeShow' : function(){
+				jQuery("#fancyConfirm_ok").click(function(){
+					callbackYes();
+					$.fancybox.close();
+				});
+			}
+		});
+	}else{
+		jQuery.fancybox({
+			'modal' : true,
+			'helpers' : {
+				'overlay' : {
+					'locked' : false
+				}
+			},
+			'content' : '<div style="margin:1px; width:500px;">'+msg+'<div style="text-align:right;margin-top:10px;"><input type="button" id="fancyConfirm_ok" class="btn btn-default" value="確定"></div></div>',
+			'beforeShow' : function(){
+				jQuery("#fancyConfirm_ok").click(function(){
+					$.fancybox.close();
+				});
+			}
+		});
+	}
+}
+
+function fancyConfirm(msg,callbackYes,callbackNo){
+	var argLength = arguments.length;
+	if(argLength == 3){
+		jQuery.fancybox({
+			'modal' : true,
+			'content' : '<div style="margin:1px; width:500px;">'+msg+'<div style="text-align:right;margin-top:10px;"><input type="button" id="fancyConfirm_ok" class="btn btn-default" value="確定"><input type="button" id="fancyconfirm_cancel" class="btn btn-default" value="取消"></div></div>',
+			'beforeShow' : function(){
+				jQuery("#fancyConfirm_ok").click(function(){
+					callbackYes();
+					$.fancybox.close();
+				});
+				jQuery("#fancyconfirm_cancel").click(function(){
+					callbackNo();
+					$.fancybox.close();
+				});
+			}
+		});
+	}else{
+		jQuery.fancybox({
+			'modal' : true,
+			'content' : '<div style="margin:1px; width:500px;">'+msg+'<div style="text-align:right;margin-top:10px;"><input type="button" id="fancyConfirm_ok" class="btn btn-default" value="確定"><input type="button" id="fancyconfirm_cancel" class="btn btn-default" value="取消"></div></div>',
+			'beforeShow' : function(){
+				jQuery("#fancyConfirm_ok").click(function(){
+					callbackYes();
+					$.fancybox.close();
+				});
+				jQuery("#fancyconfirm_cancel").click(function(){
+					$.fancybox.close();
+				});
+			}
+		});
+	}
+}
+
+</script>
+<script language="JavaScript" type="text/javascript">
+	//===== 切換語版 =====
+	function change_lang(){
+		var before_lang="r=ch";
+		var after_lang ="r=en";
+		if(location.search != ""){
+			if(location.href.match(before_lang)!=null){				
+				document.location.href = location.href.replace(before_lang,after_lang);
+			}else{
+				document.location.href = (location.href.indexOf("?")!=-1 ) ? location.href.replace("\?","\?"+after_lang+"&") : location.href+"&"+after_lang;				
+			}
+		}else if(location.hash != ""){
+			document.location.href = location.href.replace(location.hash,"")+"?"+after_lang+location.hash;				
+		}else{
+			document.location.href = location.href.replace("#","")+"?"+after_lang;
+		}
+	}
+</script>
+<script language="JavaScript" type="text/javascript">
+$("#cover-menu-mask").hide();
+	function openMenu(menuType) {
+		$("#cover-menu-mask").show();
+		//nav
+		var nav_array = ["awards","film","fpp","academy"];
+		if(!$("#nav-"+menuType).hasClass("active")){
+			$("#nav-"+menuType).addClass("active");
+		}
+		for (var i=0; i<nav_array.length; ++i) {
+			if( menuType == nav_array[i] ){
+				nav_array.splice(i,1);
+				$(".cover-menu ."+menuType).show();
+			}
+		}
+		for (var i=0; i<nav_array.length; ++i) {
+			$("#nav-"+nav_array[i]).removeClass("active");
+			$(".cover-menu .title").hide();
+			$(".cover-menu ."+nav_array[i]).hide();
+		}
+		//funcnav
+		var funcnav_array = ["account","aboutus","news","events","highlights","sponsorship"];
+		if(!$("#funcnav-"+menuType).hasClass("active")){
+			$("#funcnav-"+menuType).addClass("active");
+		}
+		for (var i=0; i<funcnav_array.length; ++i) {
+			if( menuType == funcnav_array[i] ){
+				funcnav_array.splice(i,1);
+				$(".cover-menu ."+menuType).show();
+			}
+		}
+		for (var i=0; i<funcnav_array.length; ++i) {
+			$("#funcnav-"+funcnav_array[i]).removeClass("active");
+			$(".cover-menu .title").hide();
+			$(".cover-menu ."+funcnav_array[i]).hide();
+		}
+		
+		//於網站地圖頁點選時，要跳過的主功能
+		if($("#nav-"+menuType).hasClass("active")){
+			var hide_element_array = ["account","aboutus","news","events","highlights","sponsorship"];
+		}
+		else{
+			var hide_element_array = ["singin","news","events","highlights","sponsorship"];
+		}
+		for (var i=0; i<hide_element_array.length; ++i) {
+			$(".cover-menu ."+hide_element_array[i]).hide();
+		}
+		$(".sitemap ul").css("margin-top","0px");
+		$(".sitemap ul").css("margin-bottom","0px");
+		
+	}
+	function closeMenu() {
+		$("#cover-menu-mask").hide();
+		//$(".sitemap ul").css("margin","20px");
+		//nav
+		$(".navbar-nav li").removeClass("active");
+		$("#nav-awards").addClass("active");
+		//funcnav
+		$(".funcnav span").removeClass("active");
+		$("#funcnav-awards").addClass("active");
+	}
+
+</script>
+
+
+<!-- Start: Header -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./台北金馬影展 Taipei Golden Horse Film Festival_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-LLT0SR40MV');
+</script>
+<title>台北金馬影展 Taipei Golden Horse Film Festival</title>
+
+<!--[if lt IE 9]>
+<script src="https://storage.googleapis.com/tghff_outland/js/html5shiv.js"></script>
+<script src="https://storage.googleapis.com/tghff_outland/js/excanvas.js"></script>
+<script src="https://storage.googleapis.com/tghff_outland/js/respond.js"></script>
+<![endif]-->
+<!--[if IE 8]>
+<style>
+.container {
+	width: auto;
+	min-width: 1100px;
+	max-width: 1920px;
+}
+</style>
+<![endif]-->
+
+
+<style>
+.navbar-nav > li#nav-fpp  { 
+	padding-left: 15px !important;
+}
+.navbar-nav > li#nav-fpp > div > div.line {
+	left: 4px !important; 
+}
+</style>
+<style type="text/css">.fancybox-margin{margin-right:15px;}</style></head>
+
+<body id="body" data-new-gr-c-s-check-loaded="14.1245.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1245.0" style="padding-top: 123px;">
+<a name="top"></a>
+<div id="wrapper">
+	<div id="header" class="sticky clearfix fixed">
+		<div class="funcnav">
+					<div class="container">
+							<ul class="nav pull-right" role="tablist">
+					<li><a href="https://tghff.tixcraft.com/" target="_blank">影展購票</a></li>
+					<li><a href="https://virtual.goldenhorse.org.tw/" target="_blank">線上影院</a></li>					<li><a id="funcnav-news" href="https://www.goldenhorse.org.tw/news/">最新消息</a></li>
+					<li><a id="nav-events" href="https://www.goldenhorse.org.tw/events/">年度活動</a></li>
+					<li><a id="funcnav-highlights" href="https://www.goldenhorse.org.tw/highlights/">影音圖輯</a></li>
+					<li><a id="funcnav-sponsorship" href="https://www.goldenhorse.org.tw/sponsorship/">贊助金馬</a></li>
+					<li class="block" style="white-space: nowrap;"><span id="funcnav-aboutus" onclick="openMenu(&#39;aboutus&#39;);">關於我們</span></li>
+					<li><a id="funcnav-industry" href="https://www.goldenhorse.org.tw/industry/">業界 | 媒體</a></li>
+					<li class="block" style="white-space: nowrap;">
+					<a href="https://www.goldenhorse.org.tw/signin/">登入</a> | <a href="https://www.goldenhorse.org.tw/signup/"> 註冊</a>					</li>
+					<li><a href="javascript:change_lang();">EN</a></li>
+				</ul>
+			</div>
+		</div>
+		<span id="reservation_expire_alert"></span>
+
+		<div class="message" style="display:none;padding:30px 10px;color:#ffffff;text-align:center;background-color:#FF0000;" id="red_message"><!-- 取代alert 的訊息 --></div><div class="message" style="display:none;padding:30px 10px;color:#000000;text-align:center;background-color: #99ff66;" id="green_message"><!-- 取代alert 的訊息 --></div><script language="JavaScript">var message_tag_id='';function set_yellow_message(mword,tag_id){if(tag_id==undefined || tag_id==null || tag_id==''){tag_id='red_message';}message_tag_id=tag_id;$('#'+message_tag_id).html(mword);$('#'+message_tag_id).show();setTimeout('call_disappear();', 7000);}
+ function call_disappear(){$('#'+message_tag_id).html(''); $('#'+message_tag_id).hide();}</script>
+				<div class="navbar navbar-default" role="navigation">
+			<div class="container">
+				<div class="collapse navbar-collapse">
+										<a href="https://www.goldenhorse.org.tw/"><div class="navbar-brand"></div></a>
+					<ul class="nav navbar-nav pull-right">
+					<li id="nav-awards" class="active" onclick="openMenu(&#39;awards&#39;);"><div><div class="line"></div><span>金馬獎</span><div class="date">11.22</div></div></li><li id="nav-film" onclick="openMenu(&#39;film&#39;);"><div><div class="line"></div><span>影展</span><div class="date"><div class="FFF" style="display: none;">04.11-04.20</div><div class="CFF" style="display: block;">07.18-08.07</div><div class="FF" style="display: none;">11.06-11.23</div></div></div></li><li id="nav-fpp" onclick="openMenu(&#39;fpp&#39;);"><div><div class="line"></div><span>創投會議</span><div class="date">11.17-11.19</div></div></li><li id="nav-academy" onclick="openMenu(&#39;academy&#39;);"><div><div class="line"></div><span>電影學院</span><div class="date">10.20-11.22</div></div></li>					</ul>
+				</div>
+			</div>
+		</div>
+<script>
+jQuery(window).scroll(function() {
+	var _header_el	= jQuery("#header.sticky");
+		_scrollTop 	= jQuery(document).scrollTop();
+		_topBar_H 	= jQuery("#topBar").outerHeight() || 0;
+
+	if(_scrollTop > _topBar_H) {
+		_header_el.addClass('fixed');
+		_header_H = _header_el.outerHeight() || 0;
+		if(!_header_el.hasClass('transparent') && !_header_el.hasClass('translucent')) {
+			jQuery('body').css({"padding-top":_header_H+"px"});
+		}
+		$('#header.sticky #nav-film .date div').hide();
+		$('#header.sticky #nav-film .date div.CFF').show();
+	} 
+	else {
+		_header_el.removeClass('fixed');
+		if(!_header_el.hasClass('transparent') && !_header_el.hasClass('translucent')) {
+			jQuery('body').css({"padding-top":"0px"});
+		}
+		$('#header.sticky #nav-film .date div').show();
+	}
+});
+</script>
+			</div>
+	<div id="cover-menu-mask" style="display:none;">
+		<div class="close" onclick="closeMenu();">⊗</div>
+		<div class="cover-menu">
+		
+<!-- Start: Content Pager -->
+<div class="sitemap">
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/awards/about/overview/">金馬獎</a></li> 
+	<li class="awards" style="display:none;"> 
+		<div class="row"> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/awards/about/overview/" class="text-bold " target="_self">關於金馬獎</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/about/overview/" class="small_mask " target="_self">金馬獎介紹</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/about/milestones/" class="small_mask " target="_self">獎項沿革</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/about/statuettes/" class="small_mask " target="_self">金馬獎座</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/about/song/" class="small_mask " target="_self">金馬奔騰</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/awards/submission/guidelines/" class="text-bold " target="_self">競賽</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/submission/guidelines/" class="small_mask " target="_self">競賽規章</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/submission/online/" class="small_mask " target="_self">線上報名</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/submission/jury/" class="small_mask " target="_self">評審</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/submission/choice/" class="small_mask " target="_self">觀眾票選最佳影片</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/awards/nw/" class="text-bold text-checked" target="_self">入圍得獎</a> 
+						<ul> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/awards/ceremony/info/" class="text-bold " target="_self">頒獎典禮</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/ceremony/info/" class="small_mask " target="_self">典禮資訊</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/awards/ceremony/program/" class="small_mask " target="_self">典禮場刊</a></li> 
+						</ul> 
+					</div> 
+		</div> 
+	</div></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/film/about/overview/">影展</a></li> 
+	<li class="film" style="display:none;"> 
+		<div class="row"> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/film/about/overview/" class="text-bold " target="_self">關於影展</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/about/overview/" class="small_mask " target="_self">影展介紹</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/about/entry/" class="small_mask " target="_self">報名規章</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/about/submission/" class="small_mask " target="_self">線上報名</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/about/archive/" class="small_mask " target="_self">歷屆影展</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/about/programme/" class="small_mask " target="_self">歷屆專刊下載</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/film/programme/films/" class="text-bold " target="_self">節目資訊</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/programme/films/" class="small_mask " target="_self">影片介紹</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/programme/schedule/" class="small_mask " target="_self">場次表</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/programme/download/" class="small_mask " target="_self">專刊下載</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/programme/related/" class="small_mask " target="_self">相關文章</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/film/announcements/announcements/" class="text-bold " target="_self">公告</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/announcements/announcements/" class="small_mask " target="_self">影展公告</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/announcements/choice/" class="small_mask " target="_self">觀眾票選</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/film/tickets_venues/ticketing/" class="text-bold " target="_self">售票及場地</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/tickets_venues/ticketing/" class="small_mask " target="_self">售票資訊</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/tickets_venues/venues/" class="small_mask " target="_self">場地資訊</a></li> 
+					<li>❯ <a href="https://tghff.tixcraft.com/" class="small_mask " target="_blank">線上購票</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/film/tickets_venues/qa/" class="small_mask " target="_self">購票Q&amp;A</a></li> 
+						</ul> 
+					</div> 
+		</div> 
+	</div></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/fpp/about/">創投會議</a></li> 
+	<li class="fpp" style="display:none;"> 
+		<div class="row"> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/about/" class="text-bold " target="_self">創投會議沿革介紹</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/archives/" class="text-bold " target="_self">歷屆入選企劃</a> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/completed/" class="text-bold " target="_self">歷屆完成作品</a> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/submission/guidelines/" class="text-bold " target="_self">企劃報名</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/submission/guidelines/" class="small_mask " target="_self">FPP企劃案報名規章</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/submission/wipguidelines/" class="small_mask " target="_self">WIP企劃案報名規章</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/submission/seriesguidelines/" class="small_mask " target="_self">Series企劃案報名規章</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/submission/online/" class="small_mask " target="_self">線上報名</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/projects/" class="text-bold " target="_self">入選企劃</a> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/professionals/" class="text-bold " target="_self">與會公司介紹</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/jury_awards/jury/" class="text-bold " target="_self">評審及獎項</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/jury_awards/jury/" class="small_mask " target="_self">評審</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/jury_awards/award/" class="small_mask " target="_self">獎項</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/reservation/" class="text-bold " target="_self">會議預約</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/meetings/schedule/" class="text-bold " target="_self">會議活動</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/meetings/schedule/" class="small_mask " target="_self">活動流程</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/meetings/events/" class="small_mask " target="_self">周邊活動</a></li> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/fpp/gima/professionals/" class="text-bold " target="_self">金音創作獎媒合活動</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/gima/professionals/" class="small_mask " target="_self">音樂人代表介紹</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/fpp/gima/reservation/" class="small_mask " target="_self">媒合會議預約</a></li> 
+						</ul> 
+					</div> 
+		</div> 
+	</div></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/academy/about/overview/">電影學院</a></li> 
+	<li class="academy" style="display:none;"> 
+		<div class="row"> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/academy/about/overview/" class="text-bold " target="_self">關於電影學院</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/about/overview/" class="small_mask " target="_self">學院介紹</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/about/archive/" class="small_mask " target="_self">歷屆作品</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/about/mentor/" class="small_mask " target="_self">歷屆師資</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/about/talent/" class="small_mask " target="_self">歷屆學員</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/academy/submission/guidelines/" class="text-bold " target="_self">學院報名</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/submission/guidelines/" class="small_mask " target="_self">報名規章</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/submission/online/" class="small_mask " target="_self">線上報名</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/academy/participants/talents/" class="text-bold " target="_self">學院入選名單</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/participants/talents/" class="small_mask " target="_self">入選名單</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/participants/mentor/" class="small_mask " target="_self">導師</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/participants/schedule/" class="small_mask " target="_self">課程表</a></li> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/academy/results/" class="text-bold " target="_self">學院成果放映</a> 
+						<ul> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/plusoverview/" class="text-bold " target="_self">關於電影學院<font class="h4 text-normal">＋</font></a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/class/" class="small_mask " target="_self">電影大師課</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/studio/" class="small_mask " target="_self">電影工作坊</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/forum/" class="small_mask " target="_self">電影論壇</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/critics/" class="small_mask " target="_self">亞洲電影觀察團</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/teen/" class="small_mask " target="_self">青少年電影課</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/currents/" class="small_mask " target="_self">影迷新世代</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/academy/filmacademyplus/classonline/" class="small_mask " target="_self">電影大師課／線上課程</a></li> 
+						</ul> 
+					</div> 
+		</div> 
+	</div></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://tghff.test.tixcraft.com/activity/" target="_blank">影展購票</a></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/news/">最新消息</a></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/events/">年度活動</a></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/highlights/">影音圖輯</a></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/sponsorship/">贊助金馬</a></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/aboutus/about/">關於我們</a></li> 
+	<li class="aboutus" style="display:none;"> 
+		<div class="row"> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/aboutus/about/" class="text-bold " target="_self">關於我們</a> 
+						<ul> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/aboutus/history/" class="text-bold " target="_self">大事紀</a> 
+						<ul> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/aboutus/contact/" class="text-bold " target="_self">聯絡我們</a> 
+						<ul> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/aboutus/privacy/" class="text-bold " target="_self">隱私權保護政策</a> 
+						<ul> 
+						</ul> 
+					</div> 
+		</div> 
+	</div></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/industry/">業界 | 媒體</a></li> 
+</ul> 
+<ul>	<li class="title" style="display:none;"><a href="https://www.goldenhorse.org.tw/account/general/breadcrumbs/">帳戶管理</a></li> 
+	<li class="account" style="display:none;"> 
+		<div class="row"> 
+			<div class="list_special "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/general/breadcrumbs/" class="text-bold " target="_self">一般功能</a> 
+						<ul> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/account/general/password/" class="small_mask " target="_self">修改個人密碼</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/account/general/member/" class="small_mask " target="_self">修改基本資料</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/account/general/schedule/" class="small_mask " target="_self">管理我的片單</a></li> 
+					<li>❯ <a href="https://tghff.tixcraft.com/order/" class="small_mask " target="_blank">購票紀錄(拓元購票)</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/account/general/events/" class="small_mask " target="_self">年度活動報名紀錄</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/account/general/payment/" class="small_mask " target="_self">付款紀錄查詢</a></li> 
+					<li>❯ <a href="https://www.goldenhorse.org.tw/account/general/delete/" class="small_mask " target="_self">刪除帳號申請</a></li> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list_special "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/film/" class="text-bold " target="_self">影展觀摩影片報名紀錄</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/awards/" class="text-bold " target="_self">金馬獎報名紀錄</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/press/" class="text-bold " target="_self">媒體採訪報名紀錄</a> 
+						<ul> 
+						</ul> 
+					</div> 
+			</div> 
+			<div class="list_special "> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/fppsubmission/" class="text-bold " target="_self">創投會議報名紀錄</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/fppmeetings/" class="text-bold " target="_self">創投會議預約紀錄</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/gima/" class="text-bold " target="_self">金音創作獎會議預約紀錄</a> 
+						<ul> 
+						</ul> 
+					</div> 
+				<div> 
+					<a href="https://www.goldenhorse.org.tw/account/academy/" class="text-bold " target="_self">電影學院報名紀錄</a> 
+						<ul> 
+						</ul> 
+					</div> 
+		</div> 
+	</div></li> 
+</ul> 
+
+</div>
+<!-- End: Content Pager -->		</div>
+	</div>
+	
+<!-- End: Header -->
+
+<!-- Start: Content -->
+<div class="container" id="content">
+	<div class="row" style="border-top: 1px solid #c0c0c0;">
+		<!--- Start: Image -->
+		
+
+		<!--- End: Image -->
+	</div>
+
+	<div class="row">
+		<div class="col-lg-1-75 col-xs-1"></div>
+		<div class="col-lg-8-5 col-xs-10 content-page">
+			<!--- Start: Breadcrumb -->
+			
+<ul class="breadcrumb">
+	<li><a href="https://www.goldenhorse.org.tw/">首頁</a></li>
+	<li><a href="https://www.goldenhorse.org.tw/awards/about/overview/">金馬獎</a></li> 
+	<li class="active">入圍得獎</li> 
+</ul>
+			<!--- End: Breadcrumb -->
+
+			<!-- Start: Content Pager -->
+			<style>
+
+.age-list > ul > li.age > ul {
+	margin-top: 0.5%;
+}
+.age-list > ul > li.age > ul > li {
+	margin-bottom: 10px;
+	width: 10%
+}
+@media (max-width: 1599px) {
+	/*入圍得獎*/
+	.age-list > ul > li.age > ul > li a {
+		font-size: 1.2em;
+	}
+	.age-list > ul > li.age > ul > li a:hover,
+	.age-list > ul > li.age > ul > li.active a {
+		font-size: 1.48em; /*1.48*/
+	}
+}
+@media (max-width: 1499px) {
+	/*入圍得獎*/
+	.age-list > ul > li.age > ul > li a {
+		font-size: 1.12em;
+		padding-top: 5%;
+	}
+	.age-list > ul > li.age > ul > li a:hover,
+	.age-list > ul > li.age > ul > li.active a {
+		font-size: 1.35em;
+	}
+}
+a.text-person-article { 	/*color: #B37642 !important;*/
+	line-height: 0.8em;
+	/*vertical-align: top;*/
+}
+a:hover.text-person-article { 	color: #B37642 !important;
+	vertical-align: text-top;
+}
+</style>
+
+<!-- Start: Content Pager -->
+<form name="ghac_archive" action="https://www.goldenhorse.org.tw/awards/nw/" method="get">
+<input type="hidden" id="serach_type" name="serach_type" value="award">
+<input type="hidden" name="sc" value="10">
+<input type="hidden" name="search_regist_year" value="2024">
+<input type="hidden" id="ins" name="ins" value="51">
+<div>
+	<!-- Start: Age List -->
+	<div class="age-list">
+		<ul>
+			<li class="scroll_left text-left" id="scroll_left"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/iconNLeft.png" align="absmiddle"></li>
+			<li class="age">
+				<ul>
+
+<li style="display: none;" class="tickbox-0"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1962&#39;)">第 1 屆<div>1962</div></a></li><li style="display: none;" class="tickbox-1"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1963&#39;)">第 2 屆<div>1963</div></a></li><li style="display: none;" class="tickbox-2"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1965&#39;)">第 3 屆<div>1965</div></a></li><li style="display: none;" class="tickbox-3"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1966&#39;)">第 4 屆<div>1966</div></a></li><li style="display: none;" class="tickbox-4"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1967&#39;)">第 5 屆<div>1967</div></a></li><li style="display: none;" class="tickbox-5"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1968&#39;)">第 6 屆<div>1968</div></a></li><li style="display: none;" class="tickbox-6"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1969&#39;)">第 7 屆<div>1969</div></a></li><li style="display: none;" class="tickbox-7"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1970&#39;)">第 8 屆<div>1970</div></a></li><li style="display: none;" class="tickbox-8"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1971&#39;)">第 9 屆<div>1971</div></a></li><li style="display: none;" class="tickbox-9"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1972&#39;)">第 10 屆<div>1972</div></a></li><li style="display: none;" class="tickbox-10"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1973&#39;)">第 11 屆<div>1973</div></a></li><li style="display: none;" class="tickbox-11"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1975&#39;)">第 12 屆<div>1975</div></a></li><li style="display: none;" class="tickbox-12"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1976&#39;)">第 13 屆<div>1976</div></a></li><li style="display: none;" class="tickbox-13"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1977&#39;)">第 14 屆<div>1977</div></a></li><li style="display: none;" class="tickbox-14"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1978&#39;)">第 15 屆<div>1978</div></a></li><li style="display: none;" class="tickbox-15"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1979&#39;)">第 16 屆<div>1979</div></a></li><li style="display: none;" class="tickbox-16"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1980&#39;)">第 17 屆<div>1980</div></a></li><li style="display: none;" class="tickbox-17"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1981&#39;)">第 18 屆<div>1981</div></a></li><li style="display: none;" class="tickbox-18"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1982&#39;)">第 19 屆<div>1982</div></a></li><li style="display: none;" class="tickbox-19"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1983&#39;)">第 20 屆<div>1983</div></a></li><li style="display: none;" class="tickbox-20"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1984&#39;)">第 21 屆<div>1984</div></a></li><li style="display: none;" class="tickbox-21"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1985&#39;)">第 22 屆<div>1985</div></a></li><li style="display: none;" class="tickbox-22"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1986&#39;)">第 23 屆<div>1986</div></a></li><li style="display: none;" class="tickbox-23"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1987&#39;)">第 24 屆<div>1987</div></a></li><li style="display: none;" class="tickbox-24"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1988&#39;)">第 25 屆<div>1988</div></a></li><li style="display: none;" class="tickbox-25"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1989&#39;)">第 26 屆<div>1989</div></a></li><li style="display: none;" class="tickbox-26"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1990&#39;)">第 27 屆<div>1990</div></a></li><li style="display: none;" class="tickbox-27"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1991&#39;)">第 28 屆<div>1991</div></a></li><li style="display: none;" class="tickbox-28"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1992&#39;)">第 29 屆<div>1992</div></a></li><li style="display: none;" class="tickbox-29"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1993&#39;)">第 30 屆<div>1993</div></a></li><li style="display: none;" class="tickbox-30"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1994&#39;)">第 31 屆<div>1994</div></a></li><li style="display: none;" class="tickbox-31"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1995&#39;)">第 32 屆<div>1995</div></a></li><li style="display: none;" class="tickbox-32"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1996&#39;)">第 33 屆<div>1996</div></a></li><li style="display: none;" class="tickbox-33"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1997&#39;)">第 34 屆<div>1997</div></a></li><li style="display: none;" class="tickbox-34"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1998&#39;)">第 35 屆<div>1998</div></a></li><li style="display: none;" class="tickbox-35"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;1999&#39;)">第 36 屆<div>1999</div></a></li><li style="display: none;" class="tickbox-36"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2000&#39;)">第 37 屆<div>2000</div></a></li><li style="display: none;" class="tickbox-37"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2001&#39;)">第 38 屆<div>2001</div></a></li><li style="display: none;" class="tickbox-38"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2002&#39;)">第 39 屆<div>2002</div></a></li><li style="display: none;" class="tickbox-39"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2003&#39;)">第 40 屆<div>2003</div></a></li><li style="display: none;" class="tickbox-40"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2004&#39;)">第 41 屆<div>2004</div></a></li><li style="display: none;" class="tickbox-41"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2005&#39;)">第 42 屆<div>2005</div></a></li><li style="display: none;" class="tickbox-42"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2006&#39;)">第 43 屆<div>2006</div></a></li><li style="display: none;" class="tickbox-43"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2007&#39;)">第 44 屆<div>2007</div></a></li><li style="display: none;" class="tickbox-44"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2008&#39;)">第 45 屆<div>2008</div></a></li><li style="display: none;" class="tickbox-45"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2009&#39;)">第 46 屆<div>2009</div></a></li><li style="display: none;" class="tickbox-46"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2010&#39;)">第 47 屆<div>2010</div></a></li><li style="display: none;" class="tickbox-47"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2011&#39;)">第 48 屆<div>2011</div></a></li><li style="display: none;" class="tickbox-48"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2012&#39;)">第 49 屆<div>2012</div></a></li><li style="display: none;" class="tickbox-49"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2013&#39;)">第 50 屆<div>2013</div></a></li><li style="display: none;" class="tickbox-50"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2014&#39;)">第 51 屆<div>2014</div></a></li><li style="display: list-item;" class="tickbox-51"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2015&#39;)">第 52 屆<div>2015</div></a></li><li style="display: list-item;" class="tickbox-52"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2016&#39;)">第 53 屆<div>2016</div></a></li><li style="display: list-item;" class="tickbox-53"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2017&#39;)">第 54 屆<div>2017</div></a></li><li style="display: list-item;" class="tickbox-54"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2018&#39;)">第 55 屆<div>2018</div></a></li><li style="display: list-item;" class="tickbox-55"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2019&#39;)">第 56 屆<div>2019</div></a></li><li style="display: list-item;" class="tickbox-56"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2020&#39;)">第 57 屆<div>2020</div></a></li><li style="display: list-item;" class="tickbox-57"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2021&#39;)">第 58 屆<div>2021</div></a></li><li style="display: list-item;" class="tickbox-58"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2022&#39;)">第 59 屆<div>2022</div></a></li><li style="display: list-item;" class="tickbox-59"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2023&#39;)">第 60 屆<div>2023</div></a></li><li class="active tickbox-60" style="display: list-item;"><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="chang_year(&#39;2024&#39;)">第 61 屆<div>2024</div></a></li>
+				</ul>
+			</li><li class="scroll_right text-right" id="scroll_right"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/iconNRight.png" align="absmiddle"></li>
+		</ul>
+	</div>
+	<!-- Start: Age List -->
+
+</div>
+</form>
+
+<div class="row">
+
+	<div class="col-xs-1-5"></div>
+	<div class="col-xs-9">
+
+
+		<!-- Start: Nav Pills -->
+		<ul class="nav nav-pills">
+		  <li class="touch active" id="award"><a href="https://www.goldenhorse.org.tw/awards/nw/?serach_type=award&amp;sc=10&amp;search_regist_year=2024&amp;ins=51" onclick="return false;"><div>依獎項查看</div></a></li>
+		  <li class="touch" id="flim"><a href="https://www.goldenhorse.org.tw/awards/nw/?serach_type=flim&amp;sc=10&amp;search_regist_year=2024&amp;ins=51" onclick="return false;"><div>依影片查看</div></a></li>
+		  <li><a href="https://www.goldenhorse.org.tw/awards/nw/search"><div>搜尋</div></a></li>
+		</ul>
+		<!-- End: Nav Pills -->
+
+		<!-- Start: Data -->
+		<table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳劇情片 </th></tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3895"><div>從今以後</div></a></td>  <td>先響電影有限公司, Mise en Scene Film Production Ltd.</td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3853"><div>默視錄</div></a></td>  <td>亞鋼電影公司, 飛望影像有限公司, Films de Force Majeure, Cinema Inutile</td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899"><div>鬼才之道</div></a></td>  <td>牽猴子股份有限公司, 索尼影業國際製片, 影一製作所股份有限公司, 大慕可可股份有限公司, 有戲娛樂股份有限公司, 奇幻娛樂國際股份有限公司, 一種態度電影股份有限公司</td>  </tr>  <tr class="mark">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4019"><div>一部未完成的電影</div></a></td>  <td>Yingfilms Pte. Ltd., Essential Films</td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018"><div>漂亮朋友</div></a></td>  <td>Blackfin Production</td>  </tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳紀錄片 </th></tr>  <tr class="mark">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4017"><div>由島至島</div></a></td>  <td>廖克發<br>蜂鳥影像有限公司, 財團法人公共電視文化事業基金會</td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4023"><div>雪水消融的季節</div></a></td>  <td>羅苡珊<br>希望影視行銷股份有限公司</td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4025"><div>曦曦</div></a></td>  <td>吳璠<br>宇宙子媒體藝術有限公司</td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4021"><div>種土</div></a></td>  <td>顏蘭權<br>無米樂影像工作室, 財團法人公共電視文化事業基金會</td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4016"><div>青春（苦）</div></a></td>  <td>王兵<br>光譜國際映像, Gladys Glover, CS Production</td>  </tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳動畫片  <span class="text-spot-light">( 入圍從缺 )</span></th></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳劇情短片 </th></tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3901"><div>燃夜</div></a></td>  <td>王煜<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3892"><div>九月的四個星期天</div></a></td>  <td>楊敏之<br></td>  </tr>  <tr class="mark">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3887"><div>A面：我的一天</div></a></td>  <td>温景輝<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3904"><div>囚犬</div></a></td>  <td>顏皓軒<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3898"><div>金魚缸小姐</div></a></td>  <td>巫虹儀<br></td>  </tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳紀錄短片 </th></tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3922"><div>哦瑪</div></a></td>  <td>薛孟竺<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3909"><div>野生之路</div></a></td>  <td>陳巧薇<br></td>  </tr>  <tr class="mark">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3915"><div>顏色擷取樣本.mov</div></a></td>  <td>陳卓斯,王紀堯<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3925"><div>慧童</div></a></td>  <td>任俠<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3918"><div>獄中信－鄒幸彤</div></a></td>  <td>綠豆<br></td>  </tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳動畫短片 </th></tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3932"><div>加減乘</div></a></td>  <td>李竺潔<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3936"><div>化</div></a></td>  <td>洪菀妤<br></td>  </tr>  <tr class="mark">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3938"><div>房間裡的你</div></a></td>  <td>石家俊<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3941"><div>死囡仔</div></a></td>  <td>莊淯津<br></td>  </tr>  <tr class="">  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3929"><div>喵十一</div></a></td>  <td>張勃<br></td>  </tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳導演 </th></tr>  <tr class=""><td><div>楊曜愷</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3895">從今以後</a></td></tr>  <tr class=""><td><div>楊修華</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3853">默視錄</a></td></tr>  <tr class=""><td><div>徐漢強</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class="mark"><td><div>林亞薇  Mira Lin</div></td>  <td><a href="https://www.youtube.com/watch?v=pqF6k208czY">關於我被朋友帶到夜店差點被殺掉</a></td></tr>  <tr class=""><td><div>耿軍</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018">漂亮朋友</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳男主角 </th></tr>  <tr class=""><td><div>喜翔</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3889">春行</a></td></tr>  <tr class=""><td><div>張震</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3944">餘燼</a></td></tr>  <tr class=""><td><div>游學修</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3955">看我今天怎麼說</a></td></tr>  <tr class=""><td><div>Wanlop RUNGKUMJAD</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></td></tr>  <tr class="mark"><td><div>張志勇</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018">漂亮朋友</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳女主角 </th></tr>  <tr class=""><td><div>區嘉雯</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3895">從今以後</a></td></tr>  <tr class=""><td><div>夏于喬</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class="mark"><td><div>鍾雪瑩</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3955">看我今天怎麼說</a></td></tr>  <tr class=""><td><div>張艾嘉</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4001">女兒的女兒</a></td></tr>  <tr class=""><td><div>吳君如</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4012">我談的那場戀愛</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳男配角 </th></tr>  <tr class=""><td><div>李康生</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3853">默視錄</a></td></tr>  <tr class=""><td><div>莫子儀</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3944">餘燼</a></td></tr>  <tr class=""><td><div>曾國城</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class=""><td><div>洪瑜鴻（春風）</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></td></tr>  <tr class="mark"><td><div>施名帥</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3974">角頭－大橋頭</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳女配角 </th></tr>  <tr class=""><td><div>張榕容</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>曾沛慈</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3906">BIG</a></td></tr>  <tr class="mark"><td><div>楊貴媚</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class=""><td><div>陸弈靜</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></td></tr>  <tr class=""><td><div>劉奕兒</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4001">女兒的女兒</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳新導演 </th></tr>  <tr class=""><td><div>邱陽</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3882">空房間裡的女人</a></td></tr>  <tr class=""><td><div>彭紫惠, 王品文</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3889">春行</a></td></tr>  <tr class=""><td><div>葉星宇</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3919">三個羯子</a></td></tr>  <tr class="mark"><td><div>曾威量, 尹又巧</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></td></tr>  <tr class=""><td><div>何妙祺</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4012">我談的那場戀愛</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳新演員 </th></tr>  <tr class=""><td><div>余艾洱</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3882">空房間裡的女人</a></td></tr>  <tr class="mark"><td><div>鄭又菲</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3906">BIG</a></td></tr>  <tr class=""><td><div>湯詠絮</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3913">莎莉</a></td></tr>  <tr class=""><td><div>林政勳</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3970">優雅的相遇</a></td></tr>  <tr class=""><td><div>梁湘華</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4009">破浪男女</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳原著劇本 </th></tr>  <tr class=""><td><div>楊修華</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3853">默視錄</a></td></tr>  <tr class=""><td><div>徐漢強, 蔡坤霖</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>林書宇</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class="mark"><td><div>黃熙</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4001">女兒的女兒</a></td></tr>  <tr class=""><td><div>耿軍</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018">漂亮朋友</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳改編劇本 </th></tr>  <tr class=""><td><div>藤井道人, 林田浩川</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3960">青春18×2 通往有你的旅程</a></td></tr>  <tr class=""><td><div>張威縯, 劉蕊瑄, 蔣希汶, 施承佑</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3974">角頭－大橋頭</a></td></tr>  <tr class="mark"><td><div>王小帥</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3983">沃土</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳攝影 </th></tr>  <tr class=""><td><div>Kartik VIJAY</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class=""><td><div>今村圭佑</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3960">青春18×2 通往有你的旅程</a></td></tr>  <tr class=""><td><div>Michaël CAPRON</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></td></tr>  <tr class=""><td><div>Aziz ZHAMBAKIYEV</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4022">香巴拉</a></td></tr>  <tr class="mark"><td><div>王維華</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018">漂亮朋友</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳視覺效果 </th></tr>  <tr class="mark"><td><div>郭憲聰, 邱俊毅</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>林洪峯, 余國亮, 梁偉傑</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3906">BIG</a></td></tr>  <tr class=""><td><div>王重治, 陳冠佑</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3974">角頭－大橋頭</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳美術設計 </th></tr>  <tr class="mark"><td><div>王誌成, 梁碩麟</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>趙思豪</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3944">餘燼</a></td></tr>  <tr class=""><td><div>蔡珮玲</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class=""><td><div>葉子瑋</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></td></tr>  <tr class=""><td><div>呂東</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3983">沃土</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳造型設計 </th></tr>  <tr class="mark"><td><div>施筱柔</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>許力文</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3944">餘燼</a></td></tr>  <tr class=""><td><div>葉嘉茵</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class=""><td><div>高仙齡</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4001">女兒的女兒</a></td></tr>  <tr class=""><td><div>Ramlal KHADKA</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4022">香巴拉</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳動作設計 </th></tr>  <tr class="mark"><td><div>黃泰維</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>洪義渟</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3974">角頭－大橋頭</a></td></tr>  <tr class=""><td><div>林微弋, 袁緒虎, 張雅為, 墨耳, 廖筱婷</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4009">破浪男女</a></td></tr>  <tr class=""><td><div>江道海, 梁博恩</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4013">武替道</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳原創電影音樂 </th></tr>  <tr class="mark"><td><div>福多瑪</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3853">默視錄</a></td></tr>  <tr class=""><td><div>鬼才大Band</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>大間間昂</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3960">青春18×2 通往有你的旅程</a></td></tr>  <tr class=""><td><div>半野喜弘, Meuko! Meuko!</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3990">蟲</a></td></tr>  <tr class=""><td><div>陳筱舒</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018">漂亮朋友</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳原創電影歌曲 </th></tr>  <tr class="mark"><td><div>鬼才出道</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899"><u>詞</u> : 陳虹任&nbsp;&nbsp;<u>曲</u> : 王若琳&nbsp;&nbsp;<u>唱</u> : 王若琳<br>( 鬼才之道 )</a></td></tr>  <tr class=""><td><div>北方來的人</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3944"><u>詞</u> : 鍾孟宏&nbsp;&nbsp;<u>曲</u> : 盧律銘&nbsp;&nbsp;<u>唱</u> : 拉縴人少年兒童合唱團<br>( 餘燼 )</a></td></tr>  <tr class=""><td><div>記憶的旅人</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3960"><u>詞</u> : 櫻井和壽&nbsp;&nbsp;<u>曲</u> : 櫻井和壽&nbsp;&nbsp;<u>唱</u> : Mr.Children<br>( 青春18×2 通往有你的旅程 )</a></td></tr>  <tr class=""><td><div>妳怎麼想</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4001"><u>詞</u> : 安溥&nbsp;&nbsp;<u>曲</u> : 安溥&nbsp;&nbsp;<u>唱</u> : 安溥<br>( 女兒的女兒 )</a></td></tr>  <tr class=""><td><div>漂亮朋友</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018"><u>詞</u> : 耿軍&nbsp;&nbsp;<u>曲</u> : 梁龍&nbsp;&nbsp;<u>唱</u> : 梁龍<br>( 漂亮朋友 )</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳剪輯 </th></tr>  <tr class=""><td><div>Anna Magdalena SCHLENKER</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4025">曦曦</a></td></tr>  <tr class=""><td><div>張叔平, 黎冠東</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3895">從今以後</a></td></tr>  <tr class=""><td><div>林欣民</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></td></tr>  <tr class=""><td><div>田佳茗</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4019">一部未完成的電影</a></td></tr>  <tr class="mark"><td><div>陳合平</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018">漂亮朋友</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">最佳音效 </th></tr>  <tr class="mark"><td><div>黃年永, 陳奕伶, 澎葉生</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4017">由島至島</a></td></tr>  <tr class=""><td><div>杜篤之, 杜則剛</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3853">默視錄</a></td></tr>  <tr class=""><td><div>簡豐書, 湯湘竹, 陳家俐</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></td></tr>  <tr class=""><td><div>鄧學麟, 關惠心</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3955">看我今天怎麼說</a></td></tr>  <tr class=""><td><div>高偉晏, 林廷琍, 陳灉</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">年度台灣傑出電影工作者 </th></tr><tr class="mark">  <td colspan="2"><div>李錫堅</div></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">終身成就獎 </th></tr>  <tr class="mark"><td colspan="2"><div>林文錦</div></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">終身成就紀念獎 </th></tr>  <tr class="mark"><td colspan="2"><div>鄭佩佩</div></td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">觀眾票選最佳影片 </th></tr><tr class="mark"> <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018"><div>漂亮朋友</div></a></td>  <td>Blackfin Production</td></tr></tbody></table><table class="table special award"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2">國際影評人費比西獎 </th></tr><tr class="mark"> <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3882"><div>空房間裡的女人</div></a></td>  <td>Cinema Inutile, AURUA藝文基金, 上海方壇文化發展有限公司, Wild Grass Films</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4017">由島至島</a></th></tr><tr class="mark">  <td><div>最佳紀錄片</div></td>  <td>廖克發<br>蜂鳥影像有限公司, 財團法人公共電視文化事業基金會</td></tr><tr class="mark">  <td><div>最佳音效</div></td>  <td>黃年永, 陳奕伶, 澎葉生</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4023">雪水消融的季節</a></th></tr><tr class="">  <td><div>最佳紀錄片</div></td>  <td>羅苡珊<br>希望影視行銷股份有限公司</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4025">曦曦</a></th></tr><tr class="">  <td><div>最佳紀錄片</div></td>  <td>吳璠<br>宇宙子媒體藝術有限公司</td></tr><tr class="">  <td><div>最佳剪輯</div></td>  <td>Anna Magdalena SCHLENKER</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4021">種土</a></th></tr><tr class="">  <td><div>最佳紀錄片</div></td>  <td>顏蘭權<br>無米樂影像工作室, 財團法人公共電視文化事業基金會</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4016">青春（苦）</a></th></tr><tr class="">  <td><div>最佳紀錄片</div></td>  <td>王兵<br>光譜國際映像, Gladys Glover, CS Production</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3882">空房間裡的女人</a></th></tr><tr class="">  <td><div>最佳新導演</div></td>  <td>邱陽</td></tr><tr class="">  <td><div>最佳新演員</div></td>  <td>余艾洱</td></tr><tr class="mark">  <td><div>國際影評人費比西獎</div></td>  <td>Cinema Inutile, AURUA藝文基金, 上海方壇文化發展有限公司, Wild Grass Films</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3889">春行</a></th></tr><tr class="">  <td><div>最佳男主角</div></td>  <td>喜翔</td></tr><tr class="">  <td><div>最佳新導演</div></td>  <td>彭紫惠, 王品文</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3895">從今以後</a></th></tr><tr class="">  <td><div>最佳劇情片</div></td>  <td>先響電影有限公司, Mise en Scene Film Production Ltd.</td></tr><tr class="">  <td><div>最佳導演</div></td>  <td>楊曜愷</td></tr><tr class="">  <td><div>最佳女主角</div></td>  <td>區嘉雯</td></tr><tr class="">  <td><div>最佳剪輯</div></td>  <td>張叔平, 黎冠東</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3853">默視錄</a></th></tr><tr class="">  <td><div>最佳劇情片</div></td>  <td>亞鋼電影公司, 飛望影像有限公司, Films de Force Majeure, Cinema Inutile</td></tr><tr class="">  <td><div>最佳導演</div></td>  <td>楊修華</td></tr><tr class="">  <td><div>最佳男配角</div></td>  <td>李康生</td></tr><tr class="">  <td><div>最佳原著劇本</div></td>  <td>楊修華</td></tr><tr class="mark">  <td><div>最佳原創電影音樂</div></td>  <td>福多瑪</td></tr><tr class="">  <td><div>最佳音效</div></td>  <td>杜篤之, 杜則剛</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899">鬼才之道</a></th></tr><tr class="">  <td><div>最佳劇情片</div></td>  <td>牽猴子股份有限公司, 索尼影業國際製片, 影一製作所股份有限公司, 大慕可可股份有限公司, 有戲娛樂股份有限公司, 奇幻娛樂國際股份有限公司, 一種態度電影股份有限公司</td></tr><tr class="">  <td><div>最佳導演</div></td>  <td>徐漢強</td></tr><tr class="">  <td><div>最佳女配角</div></td>  <td>張榕容</td></tr><tr class="">  <td><div>最佳原著劇本</div></td>  <td>徐漢強, 蔡坤霖</td></tr><tr class="mark">  <td><div>最佳視覺效果</div></td>  <td>郭憲聰, 邱俊毅</td></tr><tr class="mark">  <td><div>最佳美術設計</div></td>  <td>王誌成, 梁碩麟</td></tr><tr class="mark">  <td><div>最佳造型設計</div></td>  <td>施筱柔</td></tr><tr class="mark">  <td><div>最佳動作設計</div></td>  <td>黃泰維</td></tr><tr class="">  <td><div>最佳原創電影音樂</div></td>  <td>鬼才大Band</td></tr><tr class="mark">  <td><div>最佳原創電影歌曲</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3899"><u>詞</u> : 陳虹任&nbsp;&nbsp;<u>曲</u> : 王若琳&nbsp;&nbsp;<u>唱</u> : 王若琳<br>( 鬼才出道 )</a></td></tr><tr class="">  <td><div>最佳音效</div></td>  <td>簡豐書, 湯湘竹, 陳家俐</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3906">BIG</a></th></tr><tr class="">  <td><div>最佳女配角</div></td>  <td>曾沛慈</td></tr><tr class="mark">  <td><div>最佳新演員</div></td>  <td>鄭又菲</td></tr><tr class="">  <td><div>最佳視覺效果</div></td>  <td>林洪峯, 余國亮, 梁偉傑</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3913">莎莉</a></th></tr><tr class="">  <td><div>最佳新演員</div></td>  <td>湯詠絮</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3919">三個羯子</a></th></tr><tr class="">  <td><div>最佳新導演</div></td>  <td>葉星宇</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3944">餘燼</a></th></tr><tr class="">  <td><div>最佳男主角</div></td>  <td>張震</td></tr><tr class="">  <td><div>最佳男配角</div></td>  <td>莫子儀</td></tr><tr class="">  <td><div>最佳美術設計</div></td>  <td>趙思豪</td></tr><tr class="">  <td><div>最佳造型設計</div></td>  <td>許力文</td></tr><tr class="">  <td><div>最佳原創電影歌曲</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3944"><u>詞</u> : 鍾孟宏&nbsp;&nbsp;<u>曲</u> : 盧律銘&nbsp;&nbsp;<u>唱</u> : 拉縴人少年兒童合唱團<br>( 北方來的人 )</a></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3948">小雁與吳愛麗</a></th></tr><tr class="">  <td><div>最佳女主角</div></td>  <td>夏于喬</td></tr><tr class="">  <td><div>最佳男配角</div></td>  <td>曾國城</td></tr><tr class="mark">  <td><div>最佳女配角</div></td>  <td>楊貴媚</td></tr><tr class="">  <td><div>最佳原著劇本</div></td>  <td>林書宇</td></tr><tr class="">  <td><div>最佳攝影</div></td>  <td>Kartik VIJAY</td></tr><tr class="">  <td><div>最佳美術設計</div></td>  <td>蔡珮玲</td></tr><tr class="">  <td><div>最佳造型設計</div></td>  <td>葉嘉茵</td></tr><tr class="">  <td><div>最佳剪輯</div></td>  <td>林欣民</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3955">看我今天怎麼說</a></th></tr><tr class="">  <td><div>最佳男主角</div></td>  <td>游學修</td></tr><tr class="mark">  <td><div>最佳女主角</div></td>  <td>鍾雪瑩</td></tr><tr class="">  <td><div>最佳音效</div></td>  <td>鄧學麟, 關惠心</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3960">青春18×2 通往有你的旅程</a></th></tr><tr class="">  <td><div>最佳改編劇本</div></td>  <td>藤井道人, 林田浩川</td></tr><tr class="">  <td><div>最佳攝影</div></td>  <td>今村圭佑</td></tr><tr class="">  <td><div>最佳原創電影音樂</div></td>  <td>大間間昂</td></tr><tr class="">  <td><div>最佳原創電影歌曲</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3960"><u>詞</u> : 櫻井和壽&nbsp;&nbsp;<u>曲</u> : 櫻井和壽&nbsp;&nbsp;<u>唱</u> : Mr.Children<br>( 記憶的旅人 )</a></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3964">白衣蒼狗</a></th></tr><tr class="">  <td><div>最佳男主角</div></td>  <td>Wanlop RUNGKUMJAD</td></tr><tr class="mark">  <td><div>最佳新導演</div></td>  <td>曾威量, 尹又巧</td></tr><tr class="">  <td><div>最佳男配角</div></td>  <td>洪瑜鴻（春風）</td></tr><tr class="">  <td><div>最佳女配角</div></td>  <td>陸弈靜</td></tr><tr class="">  <td><div>最佳攝影</div></td>  <td>Michaël CAPRON</td></tr><tr class="">  <td><div>最佳美術設計</div></td>  <td>葉子瑋</td></tr><tr class="">  <td><div>最佳音效</div></td>  <td>高偉晏, 林廷琍, 陳灉</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3970">優雅的相遇</a></th></tr><tr class="">  <td><div>最佳新演員</div></td>  <td>林政勳</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3974">角頭－大橋頭</a></th></tr><tr class="mark">  <td><div>最佳男配角</div></td>  <td>施名帥</td></tr><tr class="">  <td><div>最佳改編劇本</div></td>  <td>張威縯, 劉蕊瑄, 蔣希汶, 施承佑</td></tr><tr class="">  <td><div>最佳視覺效果</div></td>  <td>王重治, 陳冠佑</td></tr><tr class="">  <td><div>最佳動作設計</div></td>  <td>洪義渟</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3983">沃土</a></th></tr><tr class="mark">  <td><div>最佳改編劇本</div></td>  <td>王小帥</td></tr><tr class="">  <td><div>最佳美術設計</div></td>  <td>呂東</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3990">蟲</a></th></tr><tr class="">  <td><div>最佳原創電影音樂</div></td>  <td>半野喜弘, Meuko! Meuko!</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4001">女兒的女兒</a></th></tr><tr class="">  <td><div>最佳女主角</div></td>  <td>張艾嘉</td></tr><tr class="">  <td><div>最佳女配角</div></td>  <td>劉奕兒</td></tr><tr class="mark">  <td><div>最佳原著劇本</div></td>  <td>黃熙</td></tr><tr class="">  <td><div>最佳造型設計</div></td>  <td>高仙齡</td></tr><tr class="">  <td><div>最佳原創電影歌曲</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4001"><u>詞</u> : 安溥&nbsp;&nbsp;<u>曲</u> : 安溥&nbsp;&nbsp;<u>唱</u> : 安溥<br>( 妳怎麼想 )</a></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4009">破浪男女</a></th></tr><tr class="">  <td><div>最佳新演員</div></td>  <td>梁湘華</td></tr><tr class="">  <td><div>最佳動作設計</div></td>  <td>林微弋, 袁緒虎, 張雅為, 墨耳, 廖筱婷</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4012">我談的那場戀愛</a></th></tr><tr class="">  <td><div>最佳女主角</div></td>  <td>吳君如</td></tr><tr class="">  <td><div>最佳新導演</div></td>  <td>何妙祺</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4013">武替道</a></th></tr><tr class="">  <td><div>最佳動作設計</div></td>  <td>江道海, 梁博恩</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4019">一部未完成的電影</a></th></tr><tr class="mark">  <td><div>最佳劇情片</div></td>  <td>Yingfilms Pte. Ltd., Essential Films</td></tr><tr class="mark">  <td><div>最佳導演</div></td>  <td>婁燁</td></tr><tr class="">  <td><div>最佳剪輯</div></td>  <td>田佳茗</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4022">香巴拉</a></th></tr><tr class="">  <td><div>最佳攝影</div></td>  <td>Aziz ZHAMBAKIYEV</td></tr><tr class="">  <td><div>最佳造型設計</div></td>  <td>Ramlal KHADKA</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018">漂亮朋友</a></th></tr><tr class="">  <td><div>最佳劇情片</div></td>  <td>Blackfin Production</td></tr><tr class="">  <td><div>最佳導演</div></td>  <td>耿軍</td></tr><tr class="mark">  <td><div>最佳男主角</div></td>  <td>張志勇</td></tr><tr class="">  <td><div>最佳原著劇本</div></td>  <td>耿軍</td></tr><tr class="mark">  <td><div>最佳攝影</div></td>  <td>王維華</td></tr><tr class="">  <td><div>最佳原創電影音樂</div></td>  <td>陳筱舒</td></tr><tr class="">  <td><div>最佳原創電影歌曲</div></td>  <td><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/4018"><u>詞</u> : 耿軍&nbsp;&nbsp;<u>曲</u> : 梁龍&nbsp;&nbsp;<u>唱</u> : 梁龍<br>( 漂亮朋友 )</a></td></tr><tr class="mark">  <td><div>最佳剪輯</div></td>  <td>陳合平</td></tr><tr class="mark">  <td><div>觀眾票選最佳影片</div></td>  <td>Blackfin Production</td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3932">加減乘</a></th></tr><tr class="">  <td><div>最佳動畫短片</div></td>  <td>李竺潔<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3936">化</a></th></tr><tr class="">  <td><div>最佳動畫短片</div></td>  <td>洪菀妤<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3938">房間裡的你</a></th></tr><tr class="mark">  <td><div>最佳動畫短片</div></td>  <td>石家俊<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3941">死囡仔</a></th></tr><tr class="">  <td><div>最佳動畫短片</div></td>  <td>莊淯津<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3929">喵十一</a></th></tr><tr class="">  <td><div>最佳動畫短片</div></td>  <td>張勃<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3922">哦瑪</a></th></tr><tr class="">  <td><div>最佳紀錄短片</div></td>  <td>薛孟竺<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3909">野生之路</a></th></tr><tr class="">  <td><div>最佳紀錄短片</div></td>  <td>陳巧薇<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3915">顏色擷取樣本.mov</a></th></tr><tr class="mark">  <td><div>最佳紀錄短片</div></td>  <td>陳卓斯,王紀堯<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3925">慧童</a></th></tr><tr class="">  <td><div>最佳紀錄短片</div></td>  <td>任俠<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3918">獄中信－鄒幸彤</a></th></tr><tr class="">  <td><div>最佳紀錄短片</div></td>  <td>綠豆<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3901">燃夜</a></th></tr><tr class="">  <td><div>最佳劇情短片</div></td>  <td>王煜<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3892">九月的四個星期天</a></th></tr><tr class="">  <td><div>最佳劇情短片</div></td>  <td>楊敏之<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3887">A面：我的一天</a></th></tr><tr class="mark">  <td><div>最佳劇情短片</div></td>  <td>温景輝<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3904">囚犬</a></th></tr><tr class="">  <td><div>最佳劇情短片</div></td>  <td>顏皓軒<br></td></tr></tbody></table><table class="table special flim" style="display: none;"><colgroup>
+					<col class="col-xs-4">
+					<col class="col-xs-8">
+				</colgroup><tbody><tr><th colspan="2"><a href="https://www.goldenhorse.org.tw/film/about/archive/detail/3898">金魚缸小姐</a></th></tr><tr class="">  <td><div>最佳劇情短片</div></td>  <td>巫虹儀<br></td></tr></tbody></table>		<!-- End: Data -->
+
+
+	</div>
+	<div class="col-xs-1-5"></div>
+
+	<script language="JavaScript" type="text/javascript">
+
+
+	$('table.flim').hide();
+	$('#award').addClass('active');
+
+
+	$('#flim').click(function(){
+		$('table.flim').show();
+		$('table.award').hide();
+		$('#flim').addClass('active');
+		$('#award').removeClass('active');
+		$('#serach_type').val('flim');
+	});
+	$('#award').click(function(){
+		$('table.flim').hide();
+		$('table.award').show();
+		$('#flim').removeClass('active');
+		$('#award').addClass('active');
+		$('#serach_type').val('award');
+	});
+
+	$(document).ready(function(){
+		// Start: Scroll
+		var mvli_total = $('.age-list .age').find('li').size();//總數
+		var mv_index = 51;//左邊起始值
+		var mv_show_number = 10;//中間顯示數量
+		// var _fadeInSpeed = 100; //淡入速度
+		// var _fadeOutSpeed = 100;//淡出速度
+		$('.age-list .age').find('li').addClass(function(index) {//加上特定標籤
+			return "tickbox-" + index;
+		});
+
+		$('#scroll_left').click(function(){
+			var mvhid_total = $('.age-list .age').find('li:hidden').size();//隱藏總數
+			for(var i = mvhid_total ;i >= mvhid_total - mv_show_number; i--){
+				if(i < 0){break;}
+				$('.tickbox-'+i).show();
+				$('#ins').val(i);
+			}
+		});
+		$('#scroll_right').click(function(){
+			var mvhid_total = $('.age-list .age').find('li:hidden').size();//隱藏總數
+			var count_num = mvhid_total + mv_show_number;
+			for(var i = mvhid_total ;i < count_num; i++){
+				mvhid_total = $('.age-list .age').find('li:hidden').size();//隱藏總數
+				if(mvhid_total < mvli_total-mv_show_number){
+					$('.tickbox-'+i).hide();
+					$('#ins').val(i+1);
+				}
+			}
+		});
+		// End: Scroll
+		doResize();
+		$(window).on('resize', doResize);
+	});
+
+	var change_sc ='';
+	function doResize(){
+		setTimeout(function(){
+			var fObj = document.ghac_archive;
+			var ns = $(window).width();
+			var sc;
+			if(ns <= 1440){sc = 8;}else{sc = 10;}
+			if(sc != 10 && change_sc == ''){
+				change_sc = 1;
+				var ss = '';
+				var neno_size =0;
+				$('.age-list .age li').each(function(){
+					if($(this).attr('class').match('active')){
+						ss = $(this).attr('class').replace('active tickbox-','');
+					}else if(typeof ($(this).attr('style')) != 'undefined' && $(this).attr('style').match('none') && ss ==''){
+						neno_size++;
+					}
+				});
+				if(ss-neno_size >= 6 || neno_size >= mvli_total-8){
+					var add_ins = parseInt(fObj.ins.value,10);
+					if(sc == 10){if(neno_size > 2){fObj.ins.value = add_ins-2}}else{fObj.ins.value = add_ins+2};
+				}
+				fObj.sc.value = sc;
+				fObj.search_regist_year.value = 2024;
+				fObj.serach_type.value = 'award';
+				fObj.submit();
+			}
+		}, 10);
+	}
+
+	function chang_year(years){
+		fObj = document.ghac_archive;
+		fObj.search_regist_year.value = years;
+		fObj.submit();
+	}
+
+	//THIS IS WHERE THE MAGIC HAPPENS
+	$(document).ready(function(){
+		$('ul.nav li.touch a').click(function(e){
+			href = $(this).attr("href");
+
+			loadContent(href);
+
+			history.pushState('', 'New URL: '+href, href);
+			e.preventDefault();
+		});
+
+		//THIS EVENT MAKES SURE THAT THE BACK/FORWARD BUTTONS WORK AS WELL
+		window.onpopstate = function(event){
+			console.log("href: "+location.href);
+			loadContent(location.href);
+		};
+	});
+
+	function loadContent(url){
+		//USES JQUERY TO LOAD THE CONTENT
+		var serach_type;
+		if (url.indexOf("?") != -1){
+			serach_type = url.split("?serach_type=")[1];
+		}
+		// THESE TWO LINES JUST MAKE SURE THAT THE NAV BAR REFLECTS THE CURRENT URL
+		$('ul.nav li.touch a[href="?serach_type='+serach_type+'"]').parent();
+	}
+	</script>
+
+</div>
+<!-- End: Content Pager -->
+			<!-- End: Content Pager -->
+			
+		</div>
+		<div class="col-lg-1-75 col-xs-1"></div>
+	</div>
+</div>
+<!-- End: Content -->
+
+<!-- Start: Footer -->
+<div id="footer" class="footer">
+	<style>
+.footer {
+	padding: 20px !important;
+}
+.footer .data {
+	margin-top: 0px;
+	text-align: center;
+}
+.footer .data a:hover {
+	filter: 'alpha(opacity=70)';
+	filter: Alpha(Opacity=70, FinishOpacity=70, Style=2);
+	-moz-opacity:0.7;
+	opacity: 0.7;
+	filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70); /* IE6~IE8*/
+}
+
+.footer-banner {
+	text-align: center;
+}
+.footer-banner ul {
+	display: inline-block;
+	margin: 0px auto;
+}
+.footer-banner li {
+	float: left;
+	padding: 0px 5px;
+}
+.footer-banner img {
+	max-width: 130px;
+}
+</style>
+<div class="container" style="padding-left: 30px; padding-right: 30px;">
+	<div class="data">
+		<div>| <a href="https://www.goldenhorse.org.tw/sitemap/">網站地圖</a> | <a href="https://www.goldenhorse.org.tw/aboutus/privacy/">隱私權保護政策</a> |</div>
+		<div class="small">© Taipei Golden Horse Film Festival Executive Committee</div>
+			</div>
+</div>
+
+<script language="JavaScript" type="text/javascript">
+//===============================================================
+//計算頁腳大小
+function resizefooter(){
+	var ns = $(window).width();
+
+	//首頁推薦，基本CSS
+	$(".col-6").css({'width' :'50%'});
+	$("#r_2 .wrap").css({
+		'margin-left' :'0px',
+		'margin-right' :'5px',
+	});
+	$("#r_3 .wrap").css({
+		'margin-left' :'5px',
+		'margin-right' :'0px',
+	});
+	$(".col-3").css({
+		'margin-left' :'5px',
+		'margin-right' :'5px',
+	});
+	//表尾，基本CSS
+	$(".footer .container").css({'padding-left':'30px', 'padding-right':'30px'});
+	$(".footer-banner img").css({'max-width' :'128px'});
+
+    // 限定行動裝置
+    if( /ipad/i.test(navigator.userAgent.toLowerCase()) || /iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()) ){
+		//alert(ns);
+        $("#wrapper").css('min-width','100%');
+        $(".container").css('min-width','500px');
+        $(".container").css('padding-right','20px');
+        $(".container").css('padding-left','20px');
+        $(".row").css('margin-right','-20px');
+        $(".row").css('margin-left','-20px');
+        $(".content .row").css('margin-right','-15px');
+        $(".content .row").css('margin-left','-15px');
+
+		//遮罩選單 +210119
+		$("#cover-menu-mask .cover-menu").css('width','calc((100% - 60px * 2))');
+		$("#cover-menu-mask .close").css({
+			'margin-top':'30px',
+			'font-size':'4em',
+		});
+		//$("#cover-menu-mask .cover-menu .sitemap").css('padding-bottom','150px');
+		$("#cover-menu-mask .row").css('margin-bottom','240px');
+		$("#cover-menu-mask .row > div").css('flex-basis','100%');
+		$("#cover-menu-mask .row div").css('margin-top','30px');
+		$("#cover-menu-mask .row > div:first-child").css('margin-top','-10px');
+		$("#cover-menu-mask .row div div:last-child").css('margin-bottom','-50px');
+		$("#cover-menu-mask .row div div > a").css({
+			'display':'block',
+			'margin-bottom':'34px',
+			'font-size':'2.5em',
+		});
+		$("#cover-menu-mask .row div ul li").css({
+			'padding-top':'14px',
+			'padding-bottom':'14px',
+			'font-size':'2.5em',
+		});
+
+            $(".age-list ul li.age ul").css('margin-top','-5px');
+            $(".age-list ul li.age ul").css('margin-left','10px');
+            $(".age-list ul li.age ul li a").css('font-size','1em');
+            $(".age-list ul li.age ul li a:hover").css('font-size','1.23em');
+            $(".age-list ul li.age ul li.active a").css('font-size','1.23em');
+        $("#html img").css('width','100%');
+        //$("#html img").css('height','100%');
+        //小螢幕時         //if( ns < '1280' ){
+    }
+    // 其他(桌機)
+    else{
+        // 大螢幕時
+        if ( ns > 1920 ){
+            $(".container").css('max-width','1920px');
+        }
+    }
+}
+
+$(document).ready(function(){
+	
+	$('#reservation_expire_alert').html('');
+	$('input, textarea').placeholder();
+
+	resizefloat();
+	var $menuWrapper = $('#float'),
+		$subMenuWwrapper = $menuWrapper.find('.menu-tool'),
+		_width = $subMenuWwrapper.width(),
+		_animateSpeed = 200;
+
+	var $subMenu = $subMenuWwrapper.width(0).find('.menu-tool').css({
+		right: _width * -1
+	});
+	// 當滑鼠移入時
+	$('.main-menu').mouseover(function(){
+		// 展開寬度
+		$subMenuWwrapper.stop().animate({
+			width: _width
+		}, _animateSpeed);
+		return false;
+	});
+	// 寬度歸 0
+	$menuWrapper.mouseleave(function(){
+		$subMenuWwrapper.stop().animate({
+			width: 0
+		}, _animateSpeed);
+	});
+
+	resizefooter();
+
+	$(window).on("resize", function(){
+		
+		resizefloat();
+
+		resizefooter();
+			});
+	// [diane]160107 微軟正黑體字型取代
+	$('span.text-spot').each(function(){
+		var txt = $(this).html();
+			if(txt.search("碧") != -1 ){
+				$(this).html( txt.replace(/碧/g,"<span class='font-MS-Light'>碧</span>") );
+			}
+			else if(txt.search("筵") != -1 ){
+				$(this).html( txt.replace(/筵/g,"<span class='font-MS-Light'>筵</span>") );
+			}
+			else if(txt.search("綰") != -1 ){
+				$(this).html( txt.replace(/綰/g,"<span class='font-MS-Light'>綰</span>") );
+			}
+
+	});
+
+});
+</script>
+</div>
+<!-- End: Footer -->
+
+<!-- Start: Float -->
+
+<div class="float-menu" style="float: right; margin-right: 0px; display: block; top: 269.46px;">
+	<div id="float">
+		<ul class="nav button main-menu">
+			<li><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_search.gif"></li>
+			<li class="app"><a href="https://www.goldenhorse.org.tw/app"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_app.gif"></a></li>
+			<li><a href="https://www.facebook.com/tghff" target="_blank"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_facebook.gif"></a></li>
+			<li><a href="https://x.com/Golden_Horse" target="_blank"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_twitter.gif"></a></li>
+			<li><a href="https://www.youtube.com/user/TGHFF" target="_blank"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_youtube.gif"></a></li>
+			<li><a href="https://instagram.com/goldenhorsefilmfestival" target="_blank"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_instagram.gif"></a></li>
+			<li><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_newsletter.gif"></li>
+		</ul>
+		<div class="menu-tool" style="width: 0px;">
+			<ul>
+				<li id="searchs">
+					<form id="float_Search" name="float_Search" class="form-horizontal" role="form" target="_self" action="https://www.goldenhorse.org.tw/search" method="get">
+					<input type="text" id="search" name="search" placeholder="SEARCH" value="" size="17" maxlength="30" class="no-border font-bold"><div><a type="submit" id="click_search" href="https://www.goldenhorse.org.tw/awards/nw/#">OK</a></div>
+					</form>
+				</li>
+				<li id="app"><a href="https://www.goldenhorse.org.tw/app">APP</a></li>
+				<li id="facebook"><a href="https://www.facebook.com/tghff" target="_blank">FACEBOOK</a></li>
+				<li id="twitter"><a href="https://x.com/Golden_Horse" target="_blank">X</a></li>
+				<li id="youtube"><a href="https://www.youtube.com/user/TGHFF" target="_blank">YOUTUBE</a></li>
+				<li id="instagram"><a href="https://instagram.com/goldenhorsefilmfestival" target="_blank">INSTAGRAM</a></li>
+				<li class="end" id="newsletter">
+					<form id="float_epaper" name="float_epaper" class="form-horizontal" role="form" action="https://www.goldenhorse.org.tw/awards/nw/" method="post">
+						<input type="hidden" id="act_head" name="act_head" value="">
+						<input type="text" id="epaper_user" name="epaper_user" placeholder="NEWSLETTER" value="" size="17" maxlength="30" class="no-border font-bold"><div><a href="https://www.goldenhorse.org.tw/awards/nw/#" onclick="epaper_submit();">OK</a></div>
+					</form>
+				</li>
+			</ul>
+		</div>
+		<div class="text-center" style="padding-top: 5px;"><a href="https://www.goldenhorse.org.tw/awards/nw/#top"><img src="./台北金馬影展 Taipei Golden Horse Film Festival_files/icon_top.gif"></a></div>
+	</div>
+</div>
+<script language="JavaScript" type="text/javascript">
+function resizefloat(){
+	var ns = $(window).width();
+	$(".float-menu").css({'float': 'none','margin-right': '0px','display':'none'});
+	setTimeout('resizertest()',1);
+}
+function resizertest(){
+	var ns = $(window).width();
+	$(".float-menu").css({'float': 'right','display':'block'});
+	$(".float-menu").css('top', ns*0.18);
+}
+
+// 全站搜尋
+$(document).on('click', '#click_search', function(event){
+	var fObj = document.float_Search;
+	fObj.submit();
+});
+
+
+// 訂閱電子報功能
+function epaper_submit(){
+	var fObj = document.float_epaper;
+	if(fObj.epaper_user.value==''){
+		fancyAlert( '欄位不得為空白 ( 電子信箱 )', function(){});
+		return false;
+	}
+	if(!check_string(fObj.epaper_user.value, 'email')){
+		fancyAlert( '欄位格式不正確 ( 電子信箱 )', function(){});
+		return false;
+	}
+	fObj.act_head.value='epaper';
+	fObj.submit();
+}
+</script>
+<!-- End: Float -->
+</div>
+
+<div id="quick-start-container"></div></body><grammarly-desktop-integration data-grammarly-shadow-root="true"><template shadowrootmode="open"><style>
+      div.grammarly-desktop-integration {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select:none;
+        user-select:none;
+      }
+
+      div.grammarly-desktop-integration:before {
+        content: attr(data-content);
+      }
+    </style><div aria-label="grammarly-integration" role="group" tabindex="-1" class="grammarly-desktop-integration" data-content="{&quot;mode&quot;:&quot;full&quot;,&quot;isActive&quot;:true,&quot;isUserDisabled&quot;:false}"></div></template></grammarly-desktop-integration></html>
